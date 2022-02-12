@@ -1,36 +1,24 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
+    <v-app-bar app color="success" dark>
       <div class="d-flex align-center">
         <v-img
           alt="Vuetify Logo"
           class="shrink mr-2"
           contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
+          src="https://upload.wikimedia.org/wikipedia/th/thumb/b/b7/MJU_LOGO.svg/1200px-MJU_LOGO.svg.png"
           transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
+          width="50"
         />
       </div>
 
       <v-spacer></v-spacer>
 
       <v-btn href="/" text>
-        <span class="mr-2">Home</span>
-      </v-btn>
-      <v-btn href="/about" text>
-        <span class="mr-2">ABOUT</span>
+        <span class="mr-2">หน้าแรก</span>
       </v-btn>
       <v-btn href="/todo" text>
-        <span class="mr-2">Todo</span>
+        <span class="mr-2">ลงทะเบียนรายวิชา</span>
       </v-btn>
     </v-app-bar>
 

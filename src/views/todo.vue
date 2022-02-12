@@ -1,14 +1,40 @@
 <template>
   <v-container>
-    <homework op="Assignment" />
-    <v-select
-      v-model="subject"
-      :items="items"
-      label="กรุณาเลือกงาน"
-      solo
-    ></v-select>
-    <v-text-field v-model="work" label="รายการ" solo></v-text-field>
-    <v-btn color="success" class="mr-4" @click="addTodo()"> เพิ่ม </v-btn>
+    <v-container>
+      <homework op="ลงทะเบียนรายวิชา" />
+      <v-row>
+        <v-col cols="12" sm="6" md="3">
+          <v-text-field v-model="namestu" label="ชื่อ" solo></v-text-field>
+        </v-col>
+
+        <v-col cols="12" sm="6" md="3">
+          <v-text-field v-model="lastname" label="นามสกุล" solo></v-text-field>
+        </v-col>
+
+        <v-col cols="12" sm="6" md="3">
+          <v-text-field v-model="cs" label="คณะ" solo></v-text-field>
+        </v-col>
+        <v-col cols="12" sm="6" md="3">
+          <v-text-field v-model="cs2" label="สาขา" solo></v-text-field>
+        </v-col>
+        <v-col cols="12" sm="6" md="3">
+          <v-text-field
+            v-model="idstu"
+            label="รหัสนักศึกษา"
+            solo
+          ></v-text-field>
+        </v-col>
+      </v-row>
+
+      <v-select
+        v-model="subject"
+        :items="items"
+        label="ลงทะเบียนวิชา"
+        solo
+      ></v-select>
+
+      <v-btn color="success" class="mr-4" @click="addTodo()"> เพิ่ม </v-btn>
+    </v-container>
     <v-container>
       <v-list dense>
         <v-list-item-group v-model="selectedItem" color="primary">
@@ -34,25 +60,42 @@
 </template>
 
 <script>
-import homework from '../components/homework.vue';
+import homework from "../components/homework.vue";
 export default {
   data() {
     return {
       subject: "",
-      work: "",
-      items: ["WEd", "SA", "ML", "Buzz"],
+      namestu: "",
+      lastname: "",
+      cs: "",
+      cs2: "",
+      idstu: "",
+      items: ["cs313", "cs231", "cs232", "ct301"],
       selectedItem: 1,
       additems: [],
     };
   },
-  components:{
+  components: {
     homework,
   },
 
   methods: {
     addTodo() {
       //console.log(this.subject + this.work);
-      this.additems.push({ text: this.subject + "" + this.work });
+      this.additems.push({
+        text:
+          this.subject +
+          " " +
+          this.namestu +
+          " " +
+          this.lastname +
+          " " +
+          this.idstu +
+          " " +
+          this.cs +
+          " " +
+          this.cs2,
+      });
     },
     deleteTodo(index) {
       this.additems.splice(index, 1);
